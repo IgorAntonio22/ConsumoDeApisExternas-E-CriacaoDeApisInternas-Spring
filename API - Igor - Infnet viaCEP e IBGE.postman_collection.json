@@ -1,0 +1,297 @@
+{
+	"info": {
+		"_postman_id": "72e27149-722e-436b-b7c9-299febe58af7",
+		"name": "API - Igor - Infnet viaCEP e IBGE",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33626128"
+	},
+	"item": [
+		{
+			"name": "professor",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/professor/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"professor",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obterPorId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/professor/123/listar",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"professor",
+								"123",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"registro\": 147,\r\n    \"nome\": \"Dona Maria\",\r\n    \"salario\": 797.0,\r\n    \"mestre\": false,\r\n    \"endereco\": {\r\n        \"cep\": \"20010020\",\r\n        \"logradouro\": \"Prof Rua São José\",\r\n        \"complemento\": \"Prof 4º andar\",\r\n        \"bairro\": \"Prof Centro\",\r\n        \"localidade\": \"Prof Rio de Janeiro\",\r\n        \"uf\": \"UF\"\r\n    }        \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/professor/incluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"professor",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/professor/147/excluir",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"professor",
+								"147",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "localidade",
+			"item": [
+				{
+					"name": "cep",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/localidade/24415530",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"localidade",
+								"24415530"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/localidade/estados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"localidade",
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "municipios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/localidade/33/municipios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"localidade",
+								"33",
+								"municipios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "distritos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/localidade/3300159/distritos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"localidade",
+								"3300159",
+								"distritos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "escola",
+			"item": [
+				{
+					"name": "incluir",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"nome\": \"Instituto do iguinho\",\r\n        \"email\": \"institutoIguinho@infnet.edu.br\",\r\n        \"professores\": [\r\n            {\r\n                \"registro\": 343,\r\n                \"nome\": \"Fleipe\",\r\n                \"salario\": 19899.0,\r\n                \"mestre\": true,\r\n                \"endereco\": {\r\n                    \"cep\": \"20010020\",\r\n                    \"logradouro\": \"Prof Rua São José\",\r\n                    \"complemento\": \"Prof 4º andar\",\r\n                    \"bairro\": \"Prof Centro\",\r\n                    \"localidade\": \"Prof Rio de Janeiro\",\r\n                    \"uf\": \"UF\"\r\n                }\r\n            }\r\n        ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/escola/incluir",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"escola",
+								"incluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "obter",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/escola/listar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"escola",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/escola/Instituto do iguinho/excluir",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"escola",
+								"Instituto do iguinho",
+								"excluir"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/escola/Instituto Infnet/listar",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"escola",
+								"Instituto Infnet",
+								"listar"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
