@@ -1,7 +1,16 @@
 package br.edu.infnet.elberthmoraes.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Endereco {
 
+	@Id //chave primária
+	@GeneratedValue(strategy = GenerationType.IDENTITY) //cria um id de forma automática pra gente
+	private Integer id;
 	private String cep;
 	private String logradouro;
 	private String complemento;
@@ -13,7 +22,7 @@ public class Endereco {
 	@Override
 	public String toString() {
 
-		return "Endereço: " + cep + ";" + logradouro + ";" + complemento + ";" + bairro + ";" + localidade + ";" + uf;
+		return "Endereço: " + id + ";" + cep + ";" + logradouro + ";" + complemento + ";" + bairro + ";" + localidade + ";" + uf;
 	}
 	
 	public Endereco() {
@@ -76,4 +85,13 @@ public class Endereco {
 	public void setUf(String uf) {
 		this.uf = uf;
 	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 }

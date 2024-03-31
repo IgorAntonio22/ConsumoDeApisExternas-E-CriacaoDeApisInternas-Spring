@@ -30,23 +30,23 @@ public class EnderecoServiceTests {
 	@Test
 	void inclusao() {
 		
-		enderecoService.incluir(endereco);
+		enderecoService.incluir(endereco);//id=1
 		
-		assertEquals(endereco, enderecoService.obter(CEP));
+		assertEquals(endereco, enderecoService.obter(1));
 	}
 	
 	@Test
 	void exclusao() {
-		inclusao();
+		inclusao();//id=2
 		
-		enderecoService.excluir(CEP);
+		enderecoService.excluir(2);
 		
-		assertEquals(null, enderecoService.obter(CEP));		
+		assertEquals(null, enderecoService.obter(2));		
 	}
 	
 	@Test
 	void recuperacaoTotal() {
-		inclusao();
+		inclusao();//id=3
 		
 		assertTrue(enderecoService.obterLista().contains(endereco));
 	}

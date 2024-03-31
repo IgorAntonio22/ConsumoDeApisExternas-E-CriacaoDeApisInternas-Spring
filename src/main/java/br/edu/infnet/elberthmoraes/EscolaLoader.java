@@ -15,6 +15,7 @@ public class EscolaLoader implements ApplicationRunner {
 
 	@Autowired
 	private LocalidadeService localidadeService;
+	
 	@Autowired
 	private EscolaService escolaService;
 		

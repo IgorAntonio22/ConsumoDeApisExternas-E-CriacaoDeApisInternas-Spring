@@ -4,11 +4,23 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Transient;
+
+@Entity
 public class Escola {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id; //valor padrão Null, pois quem define o valor dele vai ser o próprio banco
 	private String nome;
 	private String email;
+	@Transient
 	private List<Professor> professores;
+	@Transient
 	private Endereco endereco;
 	
 	public Escola() {
@@ -35,7 +47,7 @@ public class Escola {
 
 	@Override
 	public String toString() {
-		return "Escola: " + nome + " - " + email + " - " + endereco + " - " + professores;
+		return "Escola: " + id + " - "+ nome + " - " + email + " - " + endereco + " - " + professores;
 	}
 	
 	public String getNome() {
@@ -67,4 +79,13 @@ public class Escola {
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
+
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
 }

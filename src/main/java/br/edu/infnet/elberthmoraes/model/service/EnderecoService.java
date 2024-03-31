@@ -4,28 +4,31 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.edu.infnet.elberthmoraes.model.domain.Endereco;
+import br.edu.infnet.elberthmoraes.model.repository.EnderecoRepository;
 
 @Service
 public class EnderecoService {
 
-	private static Map<String, Endereco> enderecos = new HashMap<String, Endereco>(); 
+	@Autowired
+	private EnderecoRepository enderecoRepository; //disponibiliza todos os métodos de CRUD 
 	
 	public void incluir(Endereco endereco) {
-		enderecos.put(endereco.getCep(), endereco);
+		enderecoRepository.save(endereco);	
 	}
 	
-	public void excluir(String cep) {
-		enderecos.remove(cep);
+	public void excluir(Integer id) {
+		enderecoRepository.deleteById(id);
 	}
 	
 	public Collection<Endereco> obterLista(){
-		return enderecos.values();
+		return (Collection<Endereco>) enderecoRepository.findAll();
 	}
 	
-	public Endereco obter(String cep){
-		return enderecos.get(cep);
+	public Endereco obter(Integer id){
+		return enderecoRepository.findById(id).orElse(null); //se não recuperar nada <Optional> retorne um nulo no lugar.
 	}
 }
